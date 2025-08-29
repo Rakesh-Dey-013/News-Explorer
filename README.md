@@ -1,12 +1,51 @@
-# React + Vite
+# 📰 News Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **News Explorer Website** built with **React + Vite**, powered by the [News API](https://newsapi.org/).  
+Browse the latest headlines, read detailed articles, and explore news from around the world in a clean and responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🌍 Explore top news stories from multiple categories  
+- 🔎 Search for articles by keywords  
+- 📄 View detailed article information with images and descriptions  
+- ⚡ Fast and optimized with **Vite + React**  
+- 📱 Fully responsive design for all devices  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Screenshots
+
+<p align="center">
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Home.png" alt="Home Page" width="250"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details.png" alt="News Details Page" width="250"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details_02.png" alt="Article Details Page" width="250"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/About.png" alt="About Page" width="250"/>
+</p>
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React, Vite  
+- **API:** [News API](https://newsapi.org/)  
+- **Styling:** CSS / Tailwind (if used)  
+- **Version Control:** Git & GitHub  
+
+---
+
+## 📦 Installation & Setup
+
+Clone the repository and run locally:
+
+```bash
+# Clone the repo
+git clone https://github.com/Rakesh-Dey-013/News-Explorer.git
+
+# Navigate to project folder
+cd News-Explorer
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
