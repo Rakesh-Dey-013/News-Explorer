@@ -1,4 +1,4 @@
-import { FaTwitter, FaFacebook, FaInstagram, FaGithub } from 'react-icons/fa'
+import { FaTwitter, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -35,16 +35,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Connect</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://x.com/RD_Gaming796974" target='_blank' className="text-gray-400 hover:text-white transition-colors">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <FaFacebook size={20} />
+              <a href="https://www.linkedin.com/in/rakeshdey007" target='_blank' className="text-gray-400 hover:text-white transition-colors">
+                <FaLinkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/rakesh._._007/" target='_blank' className="text-gray-400 hover:text-white transition-colors">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/Rakesh-Dey-013" target='_blank' className="text-gray-400 hover:text-white transition-colors">
                 <FaGithub size={20} />
               </a>
             </div>
