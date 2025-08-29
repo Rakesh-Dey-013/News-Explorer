@@ -17,10 +17,10 @@ Browse the latest headlines, read detailed articles, and explore news from aroun
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Home.png" alt="Home Page" width="250"/>
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details.png" alt="News Details Page" width="250"/>
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details_02.png" alt="Article Details Page" width="250"/>
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/About.png" alt="About Page" width="250"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Home.png" alt="Home Page" width="350"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details.png" alt="News Details Page" width="350"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details_02.png" alt="Article Details Page" width="350"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/About.png" alt="About Page" width="350"/>
 </p>
 
 ---
