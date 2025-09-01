@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
+// import { Link } from 'react-router-dom'
 import { FiMenu, FiX, FiSearch } from 'react-icons/fi'
 import { GiNewspaper } from "react-icons/gi";
 import SearchBar from './SearchBar'
@@ -17,15 +18,9 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <Link to="/explore" className="hover:text-white transition-colors">
-              Explore
-            </Link>
-            <Link to="/about" className="hover:text-white transition-colors">
-              About
-            </Link>
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/explore" className="hover:text-white transition-colors">Explore</Link>
+            <Link to="/about" className="hover:text-white transition-colors">About</Link>
             <SearchBar />
           </div>
 
