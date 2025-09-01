@@ -23,38 +23,34 @@ export const NewsProvider = ({ children }) => {
   // Determine API base URL based on environment
   const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api'
 
-  const fetchNews = async (query = '', category = 'general', pageNum = 1) => {
-    setLoading(true)
-    setError(null)
-    try {
-      const params = new URLSearchParams()
-      if (query) params.append('query', query)
-      if (category && category !== 'general') params.append('category', category)
-      params.append('page', pageNum)
-      params.append('pageSize', 12)
-      
-      console.log(`Fetching news from: ${API_BASE}/news?${params.toString()}`)
-      
-      const response = await axios.get(`${API_BASE}/news?${params.toString()}`)
-      
-      // Filter out articles without title or content
-      const filteredArticles = response.data.articles.filter(
-        article => article.title && article.title !== '[Removed]'
-      )
-      
-      setNews(prev => pageNum === 1 ? filteredArticles : [...prev, ...filteredArticles])
-      setTotalResults(response.data.totalResults)
-    } catch (err) {
-      console.error('Error fetching news:', err)
-      setError(
-        err.response?.data?.error || 
-        err.message || 
-        'Failed to fetch news. Please try again later.'
-      )
-    } finally {
-      setLoading(false)
-    }
+const fetchNews = async (query = '', category = 'general', pageNum = 1) => {
+  setLoading(true)
+  setError(null)
+
+  try {
+    const params = new URLSearchParams()
+    if (query) params.append('query', query)
+    if (category && category !== 'general') params.append('category', category)
+    params.append('page', pageNum)
+    params.append('pageSize', 12)
+
+    const response = await axios.get(`${API_BASE}/news?${params.toString()}`)
+
+    const filteredArticles = response.data.articles.filter(
+      article => article.title && article.title !== '[Removed]'
+    )
+
+    setNews(prev =>
+      pageNum === 1 ? filteredArticles : [...prev, ...filteredArticles]
+    )
+    setTotalResults(response.data.totalResults)
+  } catch (err) {
+    setError(err.message)
+  } finally {
+    setLoading(false)
   }
+}
+
 
   const toggleFavorite = (article) => {
     // Check if article is already in favorites
