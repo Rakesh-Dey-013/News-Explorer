@@ -4,7 +4,7 @@
 
 # Optional: lock Node version to what you use locally
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "24"
 
 # SPA redirect (use this OR public/_redirects, not both)
 [[redirects]]
