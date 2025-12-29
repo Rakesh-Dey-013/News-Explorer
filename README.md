@@ -17,16 +17,17 @@ Browse the latest headlines, read detailed articles, and explore news from aroun
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Home.png" alt="Home Page" width="350"/>
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details.png" alt="News Details Page" width="350"/>
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/Details_02.png" alt="Article Details Page" width="350"/>
-  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/src/assets/About.png" alt="About Page" width="350"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/frontend/src/assets/Home.png" alt="Home Page" width="350"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/frontend/src/assets/Details.png" alt="News Details Page" width="350"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/frontend/src/assets/Details_02.png" alt="Article Details Page" width="350"/>
+  <img src="https://github.com/Rakesh-Dey-013/News-Explorer/blob/main/frontend/src/assets/About.png" alt="About Page" width="350"/>
 </p>
 
 ---
 
 ## 🛠️ Tech Stack
 - **Frontend:** React, Vite  
+- **Backend:** Node.js, Express
 - **API:** [News API](https://newsapi.org/)  
 - **Styling:** CSS / Tailwind (if used)  
 - **Version Control:** Git & GitHub  
@@ -44,8 +45,13 @@ git clone https://github.com/Rakesh-Dey-013/News-Explorer.git
 # Navigate to project folder
 cd News-Explorer
 
-# Install dependencies
+# Navigate to frontend and backend directories
+cd frontend
+cd backend
+
+# Install dependencies for both frontend and backend
 npm install
 
-# Start development server
+# Start development server for both frontend and backend
 npm run dev
+```
