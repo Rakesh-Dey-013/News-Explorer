@@ -5,15 +5,11 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './', // Add this line - crucial for Vercel deployment
-  build: {
-    outDir: 'dist',
-    sourcemap: false
-  },
   server: {
+    port: 3000,
     proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
+      '/api' : {
+        target: 'http://localhost:5000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api')
       }

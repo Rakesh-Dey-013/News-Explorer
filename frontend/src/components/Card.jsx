@@ -14,10 +14,10 @@ const Card = ({ article }) => {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group relative bg-gradient-to-br from-zinc-900 via-zinc-800 to-slate-900/70 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300"
+      className="group relative bg-linear-to-br from-zinc-900 via-zinc-800 to-slate-900/70 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300"
     >
       {/* Gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-600/5 to-zinc-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-linear-to-br from-zinc-600/5 to-zinc-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <div className="relative">
         <div className="relative overflow-hidden">
@@ -29,7 +29,7 @@ const Card = ({ article }) => {
             className="w-full h-48 object-cover transition-transform duration-300"
           />
           {/* Image overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent" />
           
           {/* Bookmark button with glassmorphism */}
           <motion.button 
@@ -109,7 +109,7 @@ const Card = ({ article }) => {
       
       {/* Subtle border glow effect */}
       <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 blur-sm" />
+        <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 blur-sm" />
       </div>
     </motion.div>
   )

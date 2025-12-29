@@ -4,6 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link'
 import { FiMenu, FiX, FiSearch } from 'react-icons/fi'
 import { GiNewspaper } from "react-icons/gi";
 import SearchBar from './SearchBar'
+import icon from '../assets/newspaper.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +14,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <Link to="/" className="text-xl font-bold text-white flex gap-2">
-            <GiNewspaper className="mt-1" />
+            <img src={icon} alt="" className='w-7 h-7'/>
             NewsHub
           </Link>
 
