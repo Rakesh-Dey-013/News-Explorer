@@ -3,6 +3,8 @@ import axios from 'axios'
 
 const NewsContext = createContext()
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
 export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(true)
@@ -12,7 +14,6 @@ export const NewsProvider = ({ children }) => {
   const [page, setPage] = useState(1)
   const [totalResults, setTotalResults] = useState(0)
   const [favorites, setFavorites] = useState(() => {
-    // Get favorites from localStorage if they exist
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('news_favorites')
       return saved ? JSON.parse(saved) : []
@@ -20,111 +21,97 @@ export const NewsProvider = ({ children }) => {
     return []
   })
 
-  // Determine API base URL based on environment
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api'
-
-const fetchNews = async (query = '', category = 'general', pageNum = 1) => {
-  setLoading(true)
-  setError(null)
-
-  try {
-    const params = new URLSearchParams()
-    if (query) params.append('query', query)
-    if (category && category !== 'general') params.append('category', category)
-    params.append('page', pageNum)
-    params.append('pageSize', 12)
-
-    const response = await axios.get(`${API_BASE}/news?${params.toString()}`)
-
-    const filteredArticles = response.data.articles.filter(
-      article => article.title && article.title !== '[Removed]'
-    )
-
-    setNews(prev =>
-      pageNum === 1 ? filteredArticles : [...prev, ...filteredArticles]
-    )
-    setTotalResults(response.data.totalResults)
-  } catch (err) {
-    setError(err.message)
-  } finally {
-    setLoading(false)
+  const fetchNews = async (query = '', category = 'general', pageNum = 1) => {
+    setLoading(true)
+    setError(null)
+    try {
+      let endpoint
+      let params = {}
+      
+      if (query) {
+        endpoint = '/api/news/search'
+        params = { q: query, page: pageNum, pageSize: 12 }
+      } else {
+        endpoint = '/api/news/top-headlines'
+        params = { category, page: pageNum, pageSize: 12 }
+      }
+      
+      const response = await axios.get(`${API_BASE_URL}${endpoint}`, { params })
+      
+      const filteredArticles = response.data.articles.filter(
+        article => article.title && article.title !== '[Removed]'
+      )
+      
+      setNews(prev => pageNum === 1 ? filteredArticles : [...prev, ...filteredArticles])
+      setTotalResults(response.data.totalResults)
+    } catch (err) {
+      console.error('Error fetching news:', err)
+      setError(
+        err.response?.data?.error || 
+        err.message || 
+        'Failed to fetch news. Please try again later.'
+      )
+    } finally {
+      setLoading(false)
+    }
   }
-}
-
 
   const toggleFavorite = (article) => {
-    // Check if article is already in favorites
     const isFavorite = favorites.some(fav => fav.url === article.url)
     
     if (isFavorite) {
-      // Remove from favorites
       const updatedFavorites = favorites.filter(fav => fav.url !== article.url)
       setFavorites(updatedFavorites)
-      // Save to localStorage
       if (typeof window !== 'undefined') {
         localStorage.setItem('news_favorites', JSON.stringify(updatedFavorites))
       }
     } else {
-      // Add to favorites
       const updatedFavorites = [...favorites, article]
       setFavorites(updatedFavorites)
-      // Save to localStorage
       if (typeof window !== 'undefined') {
         localStorage.setItem('news_favorites', JSON.stringify(updatedFavorites))
       }
     }
   }
 
-  const clearError = () => {
-    setError(null)
-  }
-
+  const clearError = () => setError(null)
+  
   const refreshNews = () => {
     setPage(1)
     fetchNews(searchQuery, category, 1)
   }
 
-  // Load favorites from localStorage on component mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('news_favorites')
-      if (saved) {
-        setFavorites(JSON.parse(saved))
-      }
+      if (saved) setFavorites(JSON.parse(saved))
     }
   }, [])
 
-  // Fetch news when search query, category, or page changes
   useEffect(() => {
     fetchNews(searchQuery, category, page)
   }, [searchQuery, category, page])
 
-  // Reset to page 1 when search query or category changes
   useEffect(() => {
     setPage(1)
   }, [searchQuery, category])
 
   const value = {
-    // State
     news,
     loading,
     error,
     searchQuery,
+    setSearchQuery,
     category,
+    setCategory,
     page,
+    setPage,
     totalResults,
     favorites,
-    
-    // Actions
-    setSearchQuery,
-    setCategory,
-    setPage,
     fetchNews,
     toggleFavorite,
     clearError,
     refreshNews,
-    
-    // Computed values
     hasMore: news.length < totalResults,
     isFavorite: (article) => favorites.some(fav => fav.url === article.url)
   }

@@ -54,7 +54,7 @@ const About = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 py-8 lg:py-12"
+      className="min-h-screen bg-linear-to-br from-zinc-900 via-zinc-800 to-zinc-900 py-8 lg:py-12"
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Hero Section */}
@@ -64,10 +64,10 @@ const About = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-center mb-16 lg:mb-20"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-2xl">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-2xl">
             <FaNewspaper className="text-3xl text-white" />
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text ">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 bg-linear-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text ">
             About NewsHub
           </h1>
           <p className="text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ const About = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <div className="bg-gradient-to-br from-zinc-800/60 to-zinc-800/30 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-zinc-700/50 shadow-2xl">
+          <div className="bg-linear-to-br from-zinc-800/60 to-zinc-800/30 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-zinc-700/50 shadow-2xl">
             <div className="flex items-center mb-6">
               <FaHeart className="text-red-400 text-2xl mr-4" />
               <h2 className="text-2xl lg:text-3xl font-bold text-white">Our Mission</h2>
@@ -120,7 +120,7 @@ const About = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-gradient-to-br from-zinc-800/70 to-zinc-800/30 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-zinc-700/50 shadow-xl hover:border-zinc-600/50 transition-all duration-300 group"
+                className="bg-linear-to-br from-zinc-800/70 to-zinc-800/30 backdrop-blur-lg rounded-2xl p-6 lg:p-8 border border-zinc-700/50 shadow-xl hover:border-zinc-600/50 transition-all duration-300 group"
               >
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-zinc-700/50 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
@@ -141,7 +141,7 @@ const About = () => {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <div className="bg-gradient-to-br from-zinc-800/60 to-zinc-800/30 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-zinc-700/50 shadow-2xl">
+          <div className="bg-linear-to-br from-zinc-800/60 to-zinc-800/30 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-zinc-700/50 shadow-2xl">
             <div className="flex items-center mb-8">
               <FaCode className="text-green-400 text-2xl mr-4" />
               <h2 className="text-2xl lg:text-3xl font-bold text-white">Built with Modern Technology</h2>
@@ -187,7 +187,7 @@ const About = () => {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="text-center bg-gradient-to-br from-zinc-800/40 to-zinc-800/20 backdrop-blur-lg rounded-2xl p-8 border border-zinc-700/30 shadow-xl"
+              className="text-center bg-linear-to-br from-zinc-800/40 to-zinc-800/20 backdrop-blur-lg rounded-2xl p-8 border border-zinc-700/30 shadow-xl"
             >
               <div className="text-3xl text-blue-400 mb-4">{stat.icon}</div>
               <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.number}</div>
@@ -203,7 +203,7 @@ const About = () => {
           transition={{ delay: 1.8, duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl p-8 lg:p-12 border border-blue-500/20 shadow-2xl text-center">
+          <div className="bg-linear-to-br from-blue-600/20 to-purple-600/20 rounded-3xl p-8 lg:p-12 border border-blue-500/20 shadow-2xl text-center">
             <FaRocket className="text-4xl text-blue-400 mx-auto mb-6" />
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
               Let's Stay Connected
@@ -246,7 +246,7 @@ const About = () => {
             </div>
             
             <p className="text-zinc-400 text-sm">
-              Built with ❤️ for the news community
+              Built Rakesh with ❤️ for the news community
             </p>
           </div>
         </motion.div>

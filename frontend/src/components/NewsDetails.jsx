@@ -28,7 +28,7 @@ const NewsDetails = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/')}
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl text-white font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg"
+            className="px-6 py-3 bg-linear-to-r from-blue-600 to-blue-700 rounded-xl text-white font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg"
           >
             Back to Home
           </motion.button>
@@ -77,17 +77,17 @@ const NewsDetails = () => {
           transition={{ delay: 0.2 }}
           whileHover={{ x: -4 }}
           onClick={() => navigate(-1)}
-          className="flex items-center text-slate-400 hover:text-white my-6 lg:my-8 transition-all duration-200 group"
+          className="flex items-center text-slate-400 hover:text-white my-6 lg:my-8 transition-all duration-200 group mt-3"
         >
           <motion.div
             animate={{ x: [0, -4, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <FaArrowLeft className="mr-3" />
+            <FaArrowLeft className="mr-3 mt-5" />
           </motion.div>
-          <FaArrowLeft className="mr-3 group-hover:opacity-0 transition-opacity" />
-          <span className="font-medium">Back to News</span>
+          <FaArrowLeft className="mr-3 group-hover:opacity-0 transition-opacity mt-5" />
+          <span className="font-medium mt-5">Back to News</span>
         </motion.button>
 
         {/* Main Article Container */}
@@ -95,7 +95,7 @@ const NewsDetails = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="bg-gradient-to-br from-zinc-800 via-zinc-800/60 to-zinc-800/80 backdrop-blur-xl rounded-none sm:rounded-2xl lg:rounded-3xl overflow-hidden border-0 sm:border border-slate-700/50 shadow-2xl mb-6 lg:mb-8"
+          className="bg-linear-to-br from-zinc-800 via-zinc-800/60 to-zinc-800/80 backdrop-blur-xl rounded-none sm:rounded-2xl lg:rounded-3xl overflow-hidden border-0 sm:border border-slate-700/50 shadow-2xl mb-6 lg:mb-8"
         >
           {/* Hero Image */}
           <div className="relative overflow-hidden">
@@ -108,7 +108,7 @@ const NewsDetails = () => {
               className="w-full h-[40vh] sm:h-[50vh] lg:h-[60vh] xl:h-[70vh] object-cover"
             />
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
             
             {/* Floating action buttons */}
             <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex space-x-2 sm:space-x-3">
@@ -175,7 +175,7 @@ const NewsDetails = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-gray-300 mb-4 sm:mb-6 leading-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text"
+                className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-gray-300 mb-4 sm:mb-6 leading-tight bg-linear-to-r from-white to-slate-300 bg-clip-text"
               >
               {article.title}
             </motion.h1>
@@ -228,7 +228,7 @@ const NewsDetails = () => {
                 transition={{ delay: 0.8 }}
                 className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-700/50"
               >
-                <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-500/20">
+                <div className="bg-linear-to-r from-blue-600/20 to-purple-600/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-500/20">
                   <h3 className="text-white font-semibold mb-2 sm:mb-3 text-base sm:text-lg">Want to read the complete article?</h3>
                   <p className="text-slate-300 mb-3 sm:mb-4 text-sm leading-relaxed">
                     Continue reading the full story with all details, quotes, and additional information on the original source.
@@ -239,7 +239,7 @@ const NewsDetails = () => {
                     href={article.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base"
+                    className="inline-flex items-center gap-2 sm:gap-3 bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base"
                   >
                     <span>Read Full Article</span>
                     <FaExternalLinkAlt className="text-xs sm:text-sm" />
